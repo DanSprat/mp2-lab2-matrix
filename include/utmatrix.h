@@ -278,24 +278,15 @@ template <class ValType> // конструктор преобразования 
 TMatrix<ValType>::TMatrix(const TVector<TVector<ValType> > &mt) :
 
 	TVector<TVector<ValType> >(mt) {
-<<<<<<< HEAD
-	if (GetSize() != pVector[0].GetSize())
-=======
 		if (GetSize() != pVector[0].GetSize())
->>>>>>> 8310e4e538a9864480b6bde087913a66cfce0001
 		throw 1;
 
 	for (int i = 0; i < GetSize(); i++)
 	{
 		if (pVector[i].GetStartIndex() != i || ((pVector[i].GetSize() + pVector[i].GetStartIndex()) != GetSize()))
 			throw 1;
-<<<<<<< HEAD
 	}
-=======
-    }
->>>>>>> 8310e4e538a9864480b6bde087913a66cfce0001
 }
-
 template <class ValType> // сравнение
 bool TMatrix<ValType>::operator==(const TMatrix<ValType> &mt) const
 {
