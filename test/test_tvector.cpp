@@ -80,9 +80,11 @@ TEST(TVector, throws_when_set_element_with_too_large_index)
 
 TEST(TVector, can_assign_vector_to_itself)
 {
-	TVector <int> a(5), b(a);
+	TVector <int> a(5);
 	a[0] = 1;
-	EXPECT_EQ(true, a != b);
+	TVector <int> b(a);
+	a = a;
+	EXPECT_EQ(a,b);
 }
 
 TEST(TVector, can_assign_vectors_of_equal_size)
