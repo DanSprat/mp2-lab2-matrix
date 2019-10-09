@@ -321,6 +321,14 @@ template <class ValType> // конструктор преобразования 
 TMatrix<ValType>::TMatrix(const TVector<TVector<ValType> > &mt) :
 
 	TVector<TVector<ValType> >(mt) {
+		if (GetSize() != pVector[0].GetSize())
+		throw 1;
+
+	for (int i = 0; i < GetSize(); i++)
+	{
+		if (pVector[i].GetStartIndex() != i || ((pVector[i].GetSize() + pVector[i].GetStartIndex()) != GetSize()))
+			throw 1;
+    }
 }
 
 template <class ValType> // сравнение
